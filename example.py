@@ -23,7 +23,7 @@ with zipfile.ZipFile("mirai.zip","r") as zip_ref:
 
 # File location
 path = "mirai.pcap" #the pcap, pcapng, or tsv file to process.
-packet_limit = np.Inf #the number of packets to process
+packet_limit = np.inf #the number of packets to process
 
 # KitNET params:
 maxAE = 10 #maximum size for any autoencoder in the ensemble layer
@@ -49,7 +49,15 @@ while True:
     RMSEs.append(rmse)
 stop = time.time()
 print("Complete. Time elapsed: "+ str(stop - start))
+print("Number of Packets: ", i)
 
+np.savetxt(
+    "mirai_rmse.csv",
+    np.array(RMSEs),
+    delimiter=",",
+    header="RMSE",
+    comments=""
+)
 
 # Here we demonstrate how one can fit the RMSE scores to a log-normal distribution (useful for finding/setting a cutoff threshold \phi)
 from scipy.stats import norm

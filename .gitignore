@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# Experiment datasets and generated results
+*.pcap
+*.pcapng
+*.tsv
+mirai_rmse.csv
