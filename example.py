@@ -22,7 +22,8 @@ with zipfile.ZipFile("mirai.zip","r") as zip_ref:
 
 
 # File location
-path = "mirai.pcap" #the pcap, pcapng, or tsv file to process.
+#the pcap, pcapng, or tsv file to process.
+path = "/Users/laurencrawford/.cache/kagglehub/datasets/ymirsky/network-attack-dataset-kitsune/versions/1/Mirai Botnet/Mirai_pcap.pcap"
 packet_limit = np.inf #the number of packets to process
 
 # KitNET params:
